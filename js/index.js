@@ -19,7 +19,7 @@ const render = () => {
 
     clock[0].innerHTML = `그가 집에 가기까지 ${day}일 ${hours}시간 ${minutes}분 ${seconds}초 남았습니다.`
 
-Powered By SaidBySolo;
+`Powered By SaidBySolo`;
 }
 
 setInterval(render, 1000);
