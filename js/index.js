@@ -1,6 +1,6 @@
 const clock = document.getElementsByClassName("RealTimeClock");
 
-const DDay = new Date("2024-01-10");
+const DDay = new Date("2024-01-10T08:30+09:00");
 
 const calculate = () => {
     const now = new Date()
