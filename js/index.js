@@ -17,7 +17,8 @@ const calculate = () => {
 const render = () => {
     const [day, hours, minutes, seconds] = calculate();
 
-    clock[0].innerHTML = `그가 집에 가기까지 ${day}일 ${hours}시간 ${minutes}분 ${seconds}초 남았습니다.`;
+    clock[0].innerHTML = `그가 집에 가기까지 ${day}일 ${hours}시간 ${minutes}분 ${seconds}초 남았습니다.
+${day}days, ${hours}hours ${minutes}minutes, ${seconds}seconds before he goes home`;
 }
 
 setInterval(render, 1000);
