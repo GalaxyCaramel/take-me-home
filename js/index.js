@@ -22,3 +22,4 @@ const render = () => {
 }
 
 setInterval(render, 1000);
+
