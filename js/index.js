@@ -15,7 +15,7 @@ const calculate = (dday) => {
 
 const render = () => {
     const [day, hours, minutes, seconds] = calculate(new Date("2024-01-10T08:30+09:00"));
-    const [day2, hours2, minutes2, seconds2] = calculate(new Date("2024-01-10+09:00"));
+    const [day2, hours2, minutes2, seconds2] = calculate(new Date("2024-01-10T+09:00"));
 
     clock.innerHTML = `그가 대대출발까지 ${day}일 ${hours}시간 ${minutes}분 ${seconds}초 남았습니다.`;
     clock2.innerHTML = `그가 집에 가는 날까지 ${day2}일 ${hours2}시간 ${minutes2}분 ${seconds2}초 남았습니다.`;
