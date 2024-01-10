@@ -5,10 +5,10 @@ const calculateTotal = (dday) => {
   const now = new Date()
   // dday - now 가 0 보다 크거나 같다 -> dday 가 현재보다 미래다
   if (dday.getTime() - now.getTime() >= 0) {
-    calculateUntilFuture(dday)
+    return calculateUntilFuture(dday)
   } else {
     // dday - now 가 0 보다 작다 -> dday 가 현재보다 과거다 (현재인 now 가 더 크다)
-    calculateSincePast(dday)
+    return calculateSincePast(dday)
   }
 }
 
