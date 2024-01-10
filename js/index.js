@@ -4,7 +4,7 @@ const clock3 = document.getElementsByClassName("real-time-clock-3")[0];
 
 const calculate = (dday) => {
     const now = new Date()
-    const gap = now.getTime() - dday.getTime()
+    const gap = dday.getTime() - now.getTime()
 
     const day = Math.floor(gap / (1000 * 60 * 60 * 24))
     const hours = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
