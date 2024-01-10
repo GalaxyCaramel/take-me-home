@@ -5,6 +5,7 @@ const clock3 = document.getElementsByClassName("real-time-clock-3")[0];
 const calculate = (dday) => {
     const now = new Date()
     const gap = now.getTime() - dday.getTime()
+    
 
     const day = Math.floor(gap / (1000 * 60 * 60 * 24))
     const hours = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
@@ -12,6 +13,19 @@ const calculate = (dday) => {
     const seconds = Math.floor((gap % (1000 * 60)) / 1000)
 
     return [day, hours, minutes, seconds]
+}
+
+const calculate = (dday1) => {
+    const now = new Date()
+    const gap1 = dday1.getTime() - now.getTime()
+
+    const day = Math.floor(gap1 / (1000 * 60 * 60 * 24))
+    const hours = Math.floor((gap1 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+    const minutes = Math.floor((gap1 % (1000 * 60 * 60)) / (1000 * 60))
+    const seconds = Math.floor((gap1 % (1000 * 60)) / 1000)
+
+
+    return [day9, hours9, minutes9, seconds9]
 }
 
 const render = () => {
