@@ -23,6 +23,7 @@ const calculateSincePast = (dday) => {
   const seconds = Math.floor((gap % (1000 * 60)) / 1000)
 
   return [day, hours, minutes, seconds]
+}
 
 const calculateUntilFuture = (dday) => {
       const now = new Date()
@@ -34,6 +35,7 @@ const calculateUntilFuture = (dday) => {
       const seconds = Math.floor((gap % (1000 * 60)) / 1000)
 
       return [day, hours, minutes, seconds]
+}
 
 const render = () => {
     const [day, hours, minutes, seconds] = calculateTotal(new Date("2024-01-10T00:00+09:00"));
