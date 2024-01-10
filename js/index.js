@@ -16,7 +16,7 @@ const calculate = (dday) => {
 }
 
 const calculate = (dday1) => {
-    const now = new Date()
+    const now = new Date1()
     const gap1 = dday1.getTime() - now.getTime()
 
     const day = Math.floor(gap1 / (1000 * 60 * 60 * 24))
@@ -25,17 +25,17 @@ const calculate = (dday1) => {
     const seconds = Math.floor((gap1 % (1000 * 60)) / 1000)
 
 
-    return [day9, hours9, minutes9, seconds9]
+    return [dday, dhours, dminutesd, dseconds]
 }
 
 const render = () => {
     const [day, hours, minutes, seconds] = calculate(new Date("2024-01-10T00:00+09:00"));
-    const [day2, hours2, minutes2, seconds2] = calculate(new Date("2025-01-01T00:00+09:00"));
+    const [day2, hours2, minutes2, seconds2] = calculate(new Date1("2025-01-01T00:00+09:00"));
     const [day3, hours3, minutes3, seconds3] = calculate(new Date("2024-01-09T20:00+09:00"));
 
 
     clock.innerHTML = `전역한지 ${day}일 ${hours}시간 ${minutes}분 ${seconds}초 되었습니다.`;
-    clock2.innerHTML = `예비역 1년차까지 ${day2}일 ${hours2}시간 ${minutes2}분 ${seconds2}초 남았습니다.`;
+    clock2.innerHTML = `예비역 1년차까지 ${dday}일 ${dhours}시간 ${dminutes}분 ${dseconds}초 남았습니다.`;
     clock3.innerHTML = `마지막 휴가 복귀까지 ${day3}일 ${hours3}시간 ${minutes3}분 ${seconds3}초 남았습니다.`;
 }
 
