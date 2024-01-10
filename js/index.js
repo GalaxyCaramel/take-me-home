@@ -1,34 +1,43 @@
 const clock = document.getElementsByClassName("real-time-clock")[0];
 const clock2 = document.getElementsByClassName("real-time-clock-2")[0];
-const clock3 = document.getElementsByClassName("real-time-clock-3")[0];
 
-const calculate = (dday) => {
-    const now = new Date()
-    const gap = dday.getTime() - now.getTime()
-
-    const day = Math.floor(gap / (1000 * 60 * 60 * 24))
-    const hours = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-    const minutes = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60))
-    const seconds = Math.floor((gap % (1000 * 60)) / 1000)
-
-    return [day, hours, minutes, seconds]
+const calculateTotal = (dday) => {
+  const now = new Date()
+  // dday - now 가 0 보다 크거나 같다 -> dday 가 현재보다 미래다
+  if (dday.getTime() - now.getTime() >= 0) {
+    calculateUntilFuture(dday)
+  } else {
+    // dday - now 가 0 보다 작다 -> dday 가 현재보다 과거다 (현재인 now 가 더 크다)
+    calculateSincePast(dday)
+  }
 }
 
-const calculate2 = (dday) => {
-    const now = new Date()
-    const gap = now.getTime() - dday.getTime()
 
-    const day = Math.floor(gap / (1000 * 60 * 60 * 24))
-    const hours = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-    const minutes = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60))
-    const seconds = Math.floor((gap % (1000 * 60)) / 1000)
+const calculateSincePast = (dday) => {
+  const now = new Date()
+  const gap = dday.getTime() - now.getTime()
 
-    return [day, hours, minutes, seconds]
-}
+  const day = Math.floor(gap / (1000 * 60 * 60 * 24))
+  const hours = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+  const minutes = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60))
+  const seconds = Math.floor((gap % (1000 * 60)) / 1000)
+
+  return [day, hours, minutes, seconds]
+
+const calculateUntilFuture = (dday) => {
+      const now = new Date()
+      const gap = now.getTime() - dday.getTime()
+
+      const day = Math.floor(gap / (1000 * 60 * 60 * 24))
+      const hours = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+      const minutes = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60))
+      const seconds = Math.floor((gap % (1000 * 60)) / 1000)
+
+      return [day, hours, minutes, seconds]
 
 const render = () => {
-    const [day, hours, minutes, seconds] = calculate2(new Date("2024-01-10T00:00+09:00"));
-    const [day2, hours2, minutes2, seconds2] = calculate(new Date("2025-01-01T00:00+09:00"));
+    const [day, hours, minutes, seconds] = calculateTotal(new Date("2024-01-10T00:00+09:00"));
+    const [day2, hours2, minutes2, seconds2] = calculateTotal(new Date("2025-01-01T00:00+09:00"));
 
 
 
