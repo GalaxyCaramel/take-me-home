@@ -13,9 +13,8 @@ const calculate = (dday) => {
     const seconds = Math.floor((gap % (1000 * 60)) / 1000)
 
     return [day, hours, minutes, seconds]
-}
 
-const calculate = (dday1) => {
+
     const now = new Date1()
     const gap1 = dday1.getTime() - now.getTime()
 
@@ -25,7 +24,7 @@ const calculate = (dday1) => {
     const seconds = Math.floor((gap1 % (1000 * 60)) / 1000)
 
 
-    return [dday, dhours, dminutesd, dseconds]
+    return [dday, dhours, dminutes, dseconds]
 }
 
 const render = () => {
