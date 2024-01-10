@@ -13,7 +13,7 @@ const calculateTotal = (dday) => {
 }
 
 
-const calculateSincePast = (dday) => {
+const calculateUntilFuture = (dday) => {
   const now = new Date()
   const gap = dday.getTime() - now.getTime()
 
@@ -25,7 +25,7 @@ const calculateSincePast = (dday) => {
   return [day, hours, minutes, seconds]
 }
 
-const calculateUntilFuture = (dday) => {
+const calculateSincePast = (dday) => {
       const now = new Date()
       const gap = now.getTime() - dday.getTime()
 
